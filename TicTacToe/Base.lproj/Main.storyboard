@@ -33,7 +33,7 @@
                                 <rect key="frame" x="131" y="446" width="500" height="15"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USI-U6-P8f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USI-U6-P8f">
                                 <rect key="frame" x="315" y="117" width="143" height="159"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,10 +89,30 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Kuz-TT-sV4" appends="YES" id="ceE-2A-Oai"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="label1" destination="IEj-Gh-Otf" id="SX7-Ll-okG"/>
+                        <outlet property="label2" destination="USI-U6-P8f" id="5vs-vx-RwU"/>
+                        <outlet property="label3" destination="9p3-uW-5KH" id="GyH-5S-JwL"/>
+                        <outlet property="label4" destination="Y6O-yX-dxR" id="4X5-aF-jDf"/>
+                        <outlet property="label5" destination="aXI-ec-2iF" id="FqA-db-65i"/>
+                        <outlet property="label6" destination="c7K-kF-gNe" id="vk0-5u-Uco"/>
+                        <outlet property="label7" destination="gm8-5N-nxD" id="5z1-S3-Brf"/>
+                        <outlet property="label8" destination="dJC-e7-3DE" id="hrS-1q-kd9"/>
+                        <outlet property="label9" destination="PFa-QI-MEy" id="tCr-By-3SB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Kuz-TT-sV4">
+                    <connections>
+                        <action selector="whenTapped:" destination="BYZ-38-t0r" id="Xd4-dN-X0I"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="303" y="388"/>
         </scene>
