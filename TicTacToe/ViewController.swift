@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   
+    let letters = "XOXOXOXOX"
+
+    var counter = 0
+    var currentLetter:Character!
+    
+    var labelArray = [UILabel]()
+    
+    
+    
+    
+    
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -19,19 +31,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var label7: UILabel!
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
-    
-    var counter = 0
-    var currentLetter: Character!
-    
-    var labelArray = [UILabel]()
-    
-    var letterArray = [String]()
-    
-    var letters = ["XO"]
-    
+    @IBOutlet weak var currentLetterLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+    
+    getCurrentLetter()
         
     labelArray = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
  
@@ -51,41 +55,48 @@ class ViewController: UIViewController {
                 label.text = String(currentLetter)
             }
         }
+    
         
         
         
         counter++
         
-        
-        func reset()
-        {
-            var counter = 0
-        }
-        
-        if counter == 1
+        if counter == 9
         {
             reset()
             
         }
         getCurrentLetter()
-        
-        
-        
-        
-    }
     
+    }
     func getCurrentLetter()
     {
-       // let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
-        //currentLetterLabel.text = letters.substringWithRange(myRange)
-        currentLetter = Character   (letters.substringWithRange(myRange))
+        let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
+        currentLetterLabel.text = letters.substringWithRange(myRange)
+        currentLetter = Character(letters.substringWithRange(myRange))
         
         
     }
+    
+    
+    func reset()
+    {
+        counter = 0
+        
+        //let alert = UIAlertController(title: "Resetting Counter", message: "Press OK To Reset", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        //let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: clearLabels)
+        //alert.addAction(okAction)
+        
+        //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil)
+        //alert.addAction(cancelAction)
+        
+       // presentViewController(alert, animated:  true, completion: nil)
+    }
+        
+    
 
-    
-    
-    
+
 
 }
 
