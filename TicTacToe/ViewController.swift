@@ -53,7 +53,15 @@ class ViewController: UIViewController {
             if CGRectContainsPoint(label.frame, selectedPoint)
                 
             {
+                if label.text == ""
+                {
                 label.text = String(currentLetter)
+                counter++
+                }
+                if label.text != ""
+                {
+                    
+                }
 
             }
         }
@@ -61,11 +69,9 @@ class ViewController: UIViewController {
         
         
         
-        counter++
-        if counter == 9
-        {
+       
             checkForWinner()
-        }
+
         getCurrentLetter()
     
     }
@@ -185,9 +191,9 @@ class ViewController: UIViewController {
     {
         counter = 0
         
-        let alert = UIAlertController(title: "\(winner) Won!", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "\(winner) Won!", message: "Press 'OK' To Play Again", preferredStyle: UIAlertControllerStyle.Alert)
         
-        let okAction = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: clearLabels)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: clearLabels)
         alert.addAction(okAction)
         
         
