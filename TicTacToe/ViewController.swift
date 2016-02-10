@@ -53,12 +53,15 @@ class ViewController: UIViewController {
             if CGRectContainsPoint(label.frame, selectedPoint)
                 
             {
+                if label.text == ""
+                {
+                
                 label.text = String(currentLetter)
-
+                }
+                
             }
         }
     
-        
         
         
         counter++
