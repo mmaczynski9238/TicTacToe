@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
     @IBOutlet weak var currentLetterLabel: UILabel!
-   
+    /*****************************************/
+
     
     let letters = "XOXOXOXOX"
 
@@ -28,7 +29,8 @@ class ViewController: UIViewController {
     var currentLetter:Character!
     
     var labelArray = [UILabel]()
-   
+    /*****************************************/
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -37,6 +39,8 @@ class ViewController: UIViewController {
     labelArray = [label1, label2, label3, label4, label5, label6, label7, label8, label9]
  
     }
+    /*****************************************/
+    /*****************************************/
 
     @IBAction func whenTapped(sender: UITapGestureRecognizer)
     {
@@ -50,6 +54,7 @@ class ViewController: UIViewController {
                 
             {
                 label.text = String(currentLetter)
+
             }
         }
     
@@ -64,6 +69,9 @@ class ViewController: UIViewController {
         getCurrentLetter()
     
     }
+    /*****************************************/
+    /*****************************************/
+
     func getCurrentLetter()
     {
         let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
@@ -72,6 +80,8 @@ class ViewController: UIViewController {
         
         
     }
+    /*****************************************/
+
     func checkForWinner()
         
     {
@@ -151,7 +161,8 @@ class ViewController: UIViewController {
         }
         
     }
-    
+    /*****************************************/
+
     func clearLabels(action: UIAlertAction)
     {
         
@@ -168,24 +179,24 @@ class ViewController: UIViewController {
         
         
     }
-    
+    /*****************************************/
+
     func presentWinningAlert(winner: String)
     {
         counter = 0
         
-        let alert = UIAlertController(title: "\(winner) Won!", message: "Press OK To Play Again", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "\(winner) Won!", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: clearLabels)
+        let okAction = UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: clearLabels)
         alert.addAction(okAction)
         
-        //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil)
-        //alert.addAction(cancelAction)
+        
         
         presentViewController(alert, animated:  true, completion: nil)
         
-       
-}
+    }
 
+    /*****************************************/
 
 
 
