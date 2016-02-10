@@ -9,18 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-   
-    let letters = "XOXOXOXOX"
-
-    var counter = 0
-    var currentLetter:Character!
-    
-    var labelArray = [UILabel]()
-    
-    
-    
-    
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -32,6 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
     @IBOutlet weak var currentLetterLabel: UILabel!
+   
+    
+    let letters = "XOXOXOXOX"
+
+    var counter = 0
+    var currentLetter:Character!
+    
+    var labelArray = [UILabel]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -63,8 +60,7 @@ class ViewController: UIViewController {
         
         if counter == 9
         {
-            reset()
-            
+            checkForWinner()
         }
         getCurrentLetter()
     
@@ -77,24 +73,121 @@ class ViewController: UIViewController {
         
         
     }
+    func checkForWinner()
+        
+    {
+        
+        if label1.text == label2.text && label2.text == label3.text && label3.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label3.text!)")
+            
+        }
+            
+        else if label4.text == label5.text && label5.text == label6.text && label6.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label6.text!)")
+            
+        }
+            
+        else if label7.text == label8.text && label8.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label1.text == label4.text && label4.text == label7.text && label7.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label7.text!)")
+            
+        }
+            
+        else if label2.text == label5.text && label5.text == label8.text && label8.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label8.text!)")
+            
+        }
+            
+        else if label3.text == label6.text && label6.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label1.text == label5.text && label5.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label3.text == label5.text && label5.text == label7.text && label7.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label7.text!)")
+            
+        }
+        
+        
+        
+        if counter == 9
+            
+        {
+            
+            presentWinningAlert("No One")
+            
+        }
+        
+    }
     
+    func clearLabels(action: UIAlertAction)
+    {
+        
+        label1.text = ""
+        label2.text = ""
+        label3.text = ""
+        label4.text = ""
+        label5.text = ""
+        label6.text = ""
+        label7.text = ""
+        label8.text = ""
+        label9.text = ""
+
+        
+        
+    }
     
-    func reset()
+    func presentWinningAlert(winner: String)
     {
         counter = 0
         
-        //let alert = UIAlertController(title: "Resetting Counter", message: "Press OK To Reset", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "\(winner) Won!", message: "Press OK To Play Again", preferredStyle: UIAlertControllerStyle.Alert)
         
-        //let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: clearLabels)
-        //alert.addAction(okAction)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: clearLabels)
+        alert.addAction(okAction)
         
         //let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil)
         //alert.addAction(cancelAction)
         
-       // presentViewController(alert, animated:  true, completion: nil)
-    }
+        presentViewController(alert, animated:  true, completion: nil)
         
-    
+       
+}
+
+
 
 
 
