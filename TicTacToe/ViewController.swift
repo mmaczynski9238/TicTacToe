@@ -57,7 +57,6 @@ class ViewController: UIViewController {
         
         
         counter++
-        
         if counter == 9
         {
             checkForWinner()
