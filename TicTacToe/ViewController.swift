@@ -58,10 +58,6 @@ class ViewController: UIViewController {
                 label.text = String(currentLetter)
                 counter++
                 }
-                if label.text != ""
-                {
-                    
-                }
 
             }
         }
